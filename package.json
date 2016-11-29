@@ -1,0 +1,21 @@
+{
+  "name": "patrick-michaelsen",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": ">= 0.0.1",
+    "express": "2.5.8",
+    "highlight.js": "^9.8.0",
+    "marked": "^0.3.6",
+    "mongo": "^0.1.0",
+    "mongodb": "^2.2.11",
+    "serve-favicon": "^2.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
