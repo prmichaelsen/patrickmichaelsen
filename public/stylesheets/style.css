@@ -79,6 +79,11 @@ a {
 	padding: scale(1.5,1.5);
 }
 
+.developer-button a:link{ color:white; text-decoration: none;}
+.developer-button a:visited{ color:white; text-decoration: none;}
+.developer-button a:hover{ color:white; text-decoration: none;}
+.developer-button a:active{ color:white; text-decoration: none;}
+
 .developer-button-container:hover {
 	opacity: 1;
 	transform-padding: scale(1.5,1.5);
