@@ -1,0 +1,16 @@
+#!/bin/bash
+while read oldrev newrev ref
+do
+    if [[ $ref =~ .*/master$ ]];
+    then
+        echo "Master ref received. Deploying master branch to production"
+				cd /home/user/patrickmichaelsen
+				git --work-tree=/home/user/patrickmichaelsen --git-dir=/home/user/www/patrickmichaelsen checkout -f
+        echo "Restarting server..."
+				pm2 restart patrickmichaelsen
+				echo pm2 list
+				cd /home/user/www/patrickmichaelsen
+    else
+        echo "Ref $ref successfully received.  Doing nothing: only the master branch may be deployed on this server."
+    fi
+done
