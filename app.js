@@ -53,7 +53,8 @@ app.configure('production', function(){
 app.get('/', routes.index);
 app.get('/blog', routes.blog);
 app.get('/blog/:blogPost', routes.blogPost);
-app.get('*', routes.redirectHome);
+app.get('/developer', routes.developer);
+app.get('*', routes.redirectHome); //must be last route
 
 mongoClient.connect(
 		mongodbUri,

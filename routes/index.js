@@ -2,7 +2,7 @@ var marked = require('marked');
 
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Patrick Michaelsen.com' })
+  res.render('index', { title: 'patrickmichaelsen' })
 };
 
 exports.blog = (req,res)=>{
@@ -17,6 +17,10 @@ exports.blogPost = (req,res)=>{
 		if(err){return console.log(err);}
 		res.render('blogPost', { title: result.title, blogPost: result, body: marked(result.body)}); 
 	});
+};
+
+exports.developer = (req,res)=>{
+	res.render('developer', {title:'developer'} );
 };
 
 exports.redirectHome = (req,res)=>{
