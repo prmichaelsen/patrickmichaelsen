@@ -1,10 +1,32 @@
 #!/bin/bash
+# this hook must be manually set up on the server
+
+# ssh user@server
+# cd /home/user/
+# mkdir www
+# mkdir www/patrickmichaelsen
+# cd www/patrickmichaelsen 
+# git init --bare
+## www/patrickmichaelsen is now the bare repo
+# touch hooks/post-receive
+## the contents of this file goes here
+# cd /home/user/
+## git clone the repo
+## /home/user/patrickmichaelsen is now the working dir
+## exit the server
+## in your local working dir:
+## git remote add user@server:www/patrickmichaelsen
+## now git pushes will deploy code and restart server
+
+
 while read oldrev newrev ref
 do
     if [[ $ref =~ .*/master$ ]];
     then
         echo "Master ref received. Deploying master branch to production"
 				cd /home/user/patrickmichaelsen
+				#--work-tree = working dir
+				#--git-dir = location of bare repo
 				git --work-tree=/home/user/patrickmichaelsen --git-dir=/home/user/www/patrickmichaelsen checkout -f
         echo "Restarting server..."
 				pm2 restart patrickmichaelsen
