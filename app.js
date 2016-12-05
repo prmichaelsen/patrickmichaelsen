@@ -52,7 +52,7 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/blog', routes.blog);
-app.get('/actor/journal', routes.actorJournalList);
+app.get('/actor/journal', routes.actorJournal);
 app.get('/blog/:blogPost', routes.blogPost);
 app.get('/developer', routes.developer);
 app.get('*', routes.redirectHome); //must be last route
