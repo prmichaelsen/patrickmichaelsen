@@ -12,6 +12,13 @@ exports.blog = (req,res)=>{
 	});
 };
 
+exports.actorJournal = (req,res)=>{
+	db.collection('blogPostList').find({focus: "actor",type: "journal"}).toArray((err,result)=>{
+		if(err){return console.log(err);}
+		res.render('blog', { title: 'Actor Journal', blogPostList: result}); 
+	});
+};
+
 exports.blogPost = (req,res)=>{
 	db.collection('blogPostList').findOne({url: req.params.blogPost},(err,result)=>{
 		if(err){return console.log(err);}
