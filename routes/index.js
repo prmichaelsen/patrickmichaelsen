@@ -27,7 +27,26 @@ exports.blogPost = (req,res)=>{
 };
 
 exports.developer = (req,res)=>{
-	res.render('developer', {title:'developer'} );
+	res.render('developer', {title:'developer', focus:'developer'} );
+};
+
+exports.actor = (req,res)=>{
+	res.render('actor', {title:'actor'} );
+};
+
+exports.musician = (req,res)=>{
+	res.render('musician', {title:'musician'} );
+};
+
+exports.portfolio = (req,res)=>{
+		res.render(req.params.focus+'.portfolio.ejs', {title: req.params.focus, focus: req.params.focus});
+};
+
+exports.focusBlog = (req,res)=>{
+	db.collection('blogPostList').find({focus: req.params.focus}).toArray((err,result)=>{
+		if(err){return console.log(err);}
+		res.render('blog', {title: req.params.focus, focus: req.params.focus, blogPostList: result});
+	});
 };
 
 exports.redirectHome = (req,res)=>{
