@@ -3,6 +3,12 @@ body {
 	margin: 0px;
 }
 
+#footer {
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+}
+
 a {
   color: #00B7FF;
 }
@@ -78,6 +84,11 @@ a {
 	transform-padding: scale(1.5,1.5);
 	padding: scale(1.5,1.5);
 }
+
+.developer-button a:link{ color:white; text-decoration: none;}
+.developer-button a:visited{ color:white; text-decoration: none;}
+.developer-button a:hover{ color:white; text-decoration: none;}
+.developer-button a:active{ color:white; text-decoration: none;}
 
 .developer-button-container:hover {
 	opacity: 1;

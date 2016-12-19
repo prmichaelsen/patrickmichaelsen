@@ -52,8 +52,14 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/blog', routes.blog);
+app.get('/:focus/blog', routes.focusBlog);
+app.get('/:focus/portfolio', routes.portfolio);
+app.get('/actor/journal', routes.actorJournal);
 app.get('/blog/:blogPost', routes.blogPost);
+app.get('/:focus/blog/:blogPost', routes.blogPost);
 app.get('/developer', routes.developer);
+app.get('/actor', routes.actor);
+app.get('/musician', routes.musician);
 app.get('*', routes.redirectHome); //must be last route
 
 mongoClient.connect(
