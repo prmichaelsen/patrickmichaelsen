@@ -15,8 +15,9 @@
 ## /home/user/patrickmichaelsen is now the working dir
 ## exit the server
 ## in your local working dir:
-## git remote add user@server:www/patrickmichaelsen
+## git remote add deploy user@server:www/patrickmichaelsen
 ## now git pushes will deploy code and restart server
+## for instance, git push deploy master
 
 
 while read oldrev newrev ref
