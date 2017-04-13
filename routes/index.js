@@ -31,11 +31,11 @@ exports.developer = (req,res)=>{
 };
 
 exports.actor = (req,res)=>{
-	res.render('actor', {title:'actor'} );
+	res.render('actor', {title:'actor', focus:'actor'} );
 };
 
 exports.musician = (req,res)=>{
-	res.render('musician', {title:'musician'} );
+	res.render('musician', {title:'musician', focus:'musician'} );
 };
 
 exports.portfolio = (req,res)=>{
